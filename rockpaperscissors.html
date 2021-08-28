@@ -40,12 +40,15 @@
         }
         /*Loops through 5 rounds of rock paper scissors */
         function game() {
-            let playerSelection,computerSelection,i=0,compScore=0,playerScore=0,result;
+            let playerSelection,computerSelection,i=0,compScore=0,playerScore=0,result,correctInput;
             while (i<5){
                 playerSelection=window.prompt("Please pick Rock/Paper/Scissors:");
                 playerSelection = playerSelection.toLowerCase();
+                if (playerSelection === "rock"||"paper"||"scissors") {
+                        correctInput= true;
+                    }
                 //Makes sure the input is correct (e.g. rOck/Rock/ROCK/PaPeR are all correct inputs)
-                while (1) {
+                while (!correctInput) {
                     playerSelection = window.prompt("Incorrect input!\nPlease pick Rock/Paper/Scissors:");
                     playerSelection=playerSelection.toLowerCase();
                     if (playerSelection === "rock"||"paper"||"scissors") {
